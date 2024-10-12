@@ -16,7 +16,12 @@ public class Game {
 
 			  var scanner = new java.util.Scanner(System.in);
 			  var input = scanner.nextInt();
-
+			  
+			  if (input < 1 || input > 9 || board[input - 1] == 'x' || board[input - 1] == 'o') {
+	                System.out.println("Invalid move! Try again.");
+	                continue;
+	            }
+			  
 			  board[input-1] = whoseTurn;
 		
 				if (  (board[0] + board[1] + board[2] == (whoseTurn * 3)) // first row 
